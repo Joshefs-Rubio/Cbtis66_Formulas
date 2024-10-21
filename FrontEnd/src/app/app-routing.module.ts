@@ -7,6 +7,7 @@ import { LeyHookeComponent } from './ley-hooke/ley-hooke.component';
 import { PrincipioPascalComponent } from './principio-pascal/principio-pascal.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/menuInicio', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

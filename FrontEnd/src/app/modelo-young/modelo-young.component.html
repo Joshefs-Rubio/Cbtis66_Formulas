@@ -5,5 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+
+      <h1>Cálculo del Módulo de Young</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="opcion" class="form-label"
+            >Seleccione qué desea calcular:</label
+          >
+          <select
+            [(ngModel)]="opcion"
+            class="form-select"
+            id="opcion"
+            name="opcion"
+          >
+            <option value="moduloYoung">Módulo de Young (E)</option>
+            <option value="tension">Tensión (σ)</option>
+            <option value="deformacion">Deformación (ε)</option>
+          </select>
+        </div>
+
+        <!-- Campo de entrada para la Tensión -->
+        <div class="mb-3" *ngIf="opcion !== 'tension'">
+          <label for="tension" class="form-label"
+            >Tensión (σ) en Pa (N/m²):</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="tension"
+            class="form-control"
+            id="tension"
+            placeholder="Ingrese la tensión"
+            name="tension"
+          />
+        </div>
+
+        <!-- Campo de entrada para la Deformación -->
+        <div class="mb-3" *ngIf="opcion !== 'deformacion'">
+          <label for="deformacion" class="form-label"
+            >Deformación (ε) (sin unidades):</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="deformacion"
+            class="form-control"
+            id="deformacion"
+            placeholder="Ingrese la deformación"
+            name="deformacion"
+          />
+        </div>
+
+        <!-- Campo de entrada para el Módulo de Young -->
+        <div class="mb-3" *ngIf="opcion !== 'moduloYoung'">
+          <label for="moduloYoung" class="form-label"
+            >Módulo de Young (E) en Pa (N/m²):</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="moduloYoung"
+            class="form-control"
+            id="moduloYoung"
+            placeholder="Ingrese el Módulo de Young"
+            name="moduloYoung"
+          />
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">
+          Calcular
+        </button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+    </div>
+  </body>
 </html>

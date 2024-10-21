@@ -1,1 +1,85 @@
-<p>ley-hooke works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+      <h1>Cálculo de la Ley de Hooke</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="opcion" class="form-label"
+            >Seleccione qué desea calcular:</label
+          >
+          <select
+            [(ngModel)]="opcion"
+            class="form-select"
+            id="opcion"
+            name="opcion"
+          >
+            <option value="fuerza">Fuerza Elástica (F)</option>
+            <option value="constante">Constante Elástica (k)</option>
+            <option value="deformacion">Deformación (x)</option>
+          </select>
+        </div>
+
+        <!-- Campo de entrada para la Fuerza -->
+        <div class="mb-3" *ngIf="opcion !== 'fuerza'">
+          <label for="fuerza" class="form-label"
+            >Fuerza Elástica (F) en Newton (N):</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="fuerza"
+            class="form-control"
+            id="fuerza"
+            placeholder="Ingrese la fuerza"
+            name="fuerza"
+          />
+        </div>
+
+        <!-- Campo de entrada para la Constante Elástica -->
+        <div class="mb-3" *ngIf="opcion !== 'constante'">
+          <label for="constante" class="form-label"
+            >Constante Elástica (k) en N/m:</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="constante"
+            class="form-control"
+            id="constante"
+            placeholder="Ingrese la constante elástica"
+            name="constante"
+          />
+        </div>
+
+        <!-- Campo de entrada para la Deformación -->
+        <div class="mb-3" *ngIf="opcion !== 'deformacion'">
+          <label for="deformacion" class="form-label"
+            >Deformación (x) en metros (m):</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="deformacion"
+            class="form-control"
+            id="deformacion"
+            placeholder="Ingrese la deformación"
+            name="deformacion"
+          />
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">
+          Calcular
+        </button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+    </div>
+  </body>
+</html>

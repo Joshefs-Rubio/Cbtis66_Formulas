@@ -197,4 +197,8 @@ nav ul li a:hover {
     top: 70%;
     left: 80%;
   }
+
+  .hidden-mobile {
+    display: none; /* Oculta el elemento en pantallas pequeñas */
+  }
 }

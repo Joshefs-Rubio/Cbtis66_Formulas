@@ -2,14 +2,12 @@
   "name": "front-end",
   "version": "0.0.0",
   "scripts": {
-    "scripts": {
-      "ng": "ng",
-      "start": "http-server dist/front-end",
-      "build": "ng build --configuration production",
-      "test": "ng test",
-      "lint": "ng lint",
-      "e2e": "ng e2e"
-}
+"ng": "ng",
+"start": "http-server dist/front-end",
+"build": "ng build --configuration production",
+"test": "ng test",
+"lint": "ng lint",
+"e2e": "ng e2e"
 
   },
   "private": true,

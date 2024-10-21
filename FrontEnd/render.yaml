@@ -1,0 +1,10 @@
+version: 1
+services:
+  - type: web
+    name: FrontEnd
+    env: node
+    buildCommand: npm install && npm run build -- --configuration production
+    startCommand: npm run start
+    routes:
+      - src: /*
+        dest: /index.html

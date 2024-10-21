@@ -86,21 +86,21 @@ body {
   }
   
   .btn-regresar {
-    position: absolute; /* Posición absoluta para ubicar el botón */
-    top: 20px; /* Distancia desde la parte superior */
-    left: 20px; /* Distancia desde la izquierda */
-    background-color: #ffffff; /* Color de fondo blanco */
-    color: #2e5530; /* Color del texto verde oscuro */
-    border: 1px solid #2e5530; /* Borde verde oscuro */
-    border-radius: 12px; /* Bordes redondeados */
-    padding: 8px 16px; /* Espaciado interno */
-    text-decoration: none; /* Sin subrayado */
-    font-weight: bold; /* Texto en negrita */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    color: #2e5530;
+    border: 1px solid #2e5530;
+    border-radius: 12px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   .btn-regresar:hover {
-    background-color: #2e5530; /* Fondo verde oscuro al pasar el mouse */
-    color: white; /* Texto blanco al pasar el mouse */
+    background-color: #2e5530;
+    color: white;
   }
   

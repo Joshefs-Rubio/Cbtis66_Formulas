@@ -10,8 +10,8 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  max-width: 1200px; /* Ancho máximo para pantallas grandes */
-  margin: 0 auto; /* Centrar el contenido en pantallas grandes */
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -100,7 +100,7 @@ nav ul li a:hover {
 
 .formula {
   position: absolute;
-  font-size: 7vw; /* Tamaño de íconos escalable según el ancho de la pantalla */
+  font-size: 7vw;
   color: #00a86b;
   animation: float 10s infinite ease-in-out;
   opacity: 0.8;
@@ -139,7 +139,7 @@ nav ul li a:hover {
 
 /* Sección de productos */
 .product {
-  flex-grow: 1; /* Asegura que la sección ocupe el espacio restante en la parte inferior */
+  flex-grow: 1;
   padding: 50px;
   background-color: #f0f0f0;
 }
@@ -199,6 +199,6 @@ nav ul li a:hover {
   }
 
   .hidden-mobile {
-    display: none; /* Oculta el elemento en pantallas pequeñas */
+    display: none;
   }
 }

@@ -8,7 +8,7 @@ import { MenuInicioComponent } from './menu-inicio/menu-inicio.component';
 import { ModeloYoungComponent } from './modelo-young/modelo-young.component';
 import { LeyHookeComponent } from './ley-hooke/ley-hooke.component';
 import { PrincipioPascalComponent } from './principio-pascal/principio-pascal.component';
-
+import { CaudalComponent } from './caudal/caudal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +16,8 @@ import { PrincipioPascalComponent } from './principio-pascal/principio-pascal.co
     MenuInicioComponent,
     ModeloYoungComponent,
     LeyHookeComponent,
-    PrincipioPascalComponent
+    PrincipioPascalComponent,
+    CaudalComponent
   ],
   imports: [
     BrowserModule,

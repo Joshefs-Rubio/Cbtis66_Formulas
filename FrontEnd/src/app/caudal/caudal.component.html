@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculo de Caudal y Flujo Másico</title>
+  </head>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+      <h1>Cálculo del Caudal y Flujo Másico</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="opcion" class="form-label"
+            >Seleccione qué desea calcular:</label
+          >
+          <select
+            [(ngModel)]="opcion"
+            class="form-select"
+            id="opcion"
+            name="opcion"
+          >
+            <option value="caudal">Caudal Volumétrico (Q)</option>
+            <option value="flujo">Flujo Másico (F)</option>
+          </select>
+        </div>
+
+        <!-- Campo de entrada para el Área -->
+        <div class="mb-3" *ngIf="opcion === 'caudal'">
+          <label for="area" class="form-label"
+            >Área de la Sección Transversal (A) en m²:</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="area"
+            class="form-control"
+            id="area"
+            placeholder="Ingrese el área"
+            name="area"
+          />
+        </div>
+
+        <!-- Campo de entrada para la Velocidad -->
+        <div class="mb-3" *ngIf="opcion === 'caudal'">
+          <label for="velocidad" class="form-label"
+            >Velocidad del Fluido (V) en m/s:</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="velocidad"
+            class="form-control"
+            id="velocidad"
+            placeholder="Ingrese la velocidad"
+            name="velocidad"
+          />
+        </div>
+
+        <!-- Campo de entrada para el Volumen -->
+        <div class="mb-3" *ngIf="opcion === 'caudal'">
+          <label for="volumen" class="form-label">Volumen (V) en m³:</label>
+          <input
+            type="number"
+            [(ngModel)]="volumen"
+            class="form-control"
+            id="volumen"
+            placeholder="Ingrese el volumen"
+            name="volumen"
+          />
+        </div>
+
+        <!-- Campo de entrada para el Tiempo -->
+        <div class="mb-3" *ngIf="opcion === 'caudal'">
+          <label for="tiempo" class="form-label"
+            >Tiempo (t) en segundos (s):</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="tiempo"
+            class="form-control"
+            id="tiempo"
+            placeholder="Ingrese el tiempo"
+            name="tiempo"
+          />
+        </div>
+
+        <!-- Campo de entrada para la Densidad -->
+        <div class="mb-3" *ngIf="opcion === 'flujo'">
+          <label for="densidad" class="form-label"
+            >Densidad del Fluido (P) en kg/m³:</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="densidad"
+            class="form-control"
+            id="densidad"
+            placeholder="Ingrese la densidad"
+            name="densidad"
+          />
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">
+          Calcular
+        </button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+    </div>
+  </body>
+</html>

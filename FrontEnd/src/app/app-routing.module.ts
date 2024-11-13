@@ -6,7 +6,7 @@ import { ModeloYoungComponent } from './modelo-young/modelo-young.component';
 import { LeyHookeComponent } from './ley-hooke/ley-hooke.component';
 import { PrincipioPascalComponent } from './principio-pascal/principio-pascal.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
-
+import { CaudalComponent } from './caudal/caudal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/menuInicio', pathMatch: 'full' },
@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'ley_hooke', component: LeyHookeComponent },
   { path: 'principio_pascal', component: PrincipioPascalComponent },
   { path : 'nosotros', component: NosotrosComponent },
+  { path : 'caudal', component: CaudalComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

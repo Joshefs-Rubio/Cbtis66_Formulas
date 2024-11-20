@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teorema de Bernoulli</title>
+  </head>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+      <h1>Teorema de Bernoulli</h1>
+      <form>
+        <div class="mb-3">
+          <label for="p1" class="form-label">Presión inicial (P₁) en Pa:</label>
+          <input
+            type="number"
+            [(ngModel)]="p1"
+            class="form-control"
+            id="p1"
+            placeholder="Ingrese P₁"
+            name="p1"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="v1" class="form-label"
+            >Velocidad inicial (v₁) en m/s:</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="v1"
+            class="form-control"
+            id="v1"
+            placeholder="Ingrese v₁"
+            name="v1"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="h1" class="form-label">Altura inicial (h₁) en m:</label>
+          <input
+            type="number"
+            [(ngModel)]="h1"
+            class="form-control"
+            id="h1"
+            placeholder="Ingrese h₁"
+            name="h1"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="p2" class="form-label">Presión final (P₂) en Pa:</label>
+          <input
+            type="number"
+            [(ngModel)]="p2"
+            class="form-control"
+            id="p2"
+            placeholder="Ingrese P₂"
+            name="p2"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="v2" class="form-label"
+            >Velocidad final (v₂) en m/s:</label
+          >
+          <input
+            type="number"
+            [(ngModel)]="v2"
+            class="form-control"
+            id="v2"
+            placeholder="Ingrese v₂"
+            name="v2"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="h2" class="form-label">Altura final (h₂) en m:</label>
+          <input
+            type="number"
+            [(ngModel)]="h2"
+            class="form-control"
+            id="h2"
+            placeholder="Ingrese h₂"
+            name="h2"
+          />
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">
+          Calcular
+        </button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+    </div>
+  </body>
+</html>

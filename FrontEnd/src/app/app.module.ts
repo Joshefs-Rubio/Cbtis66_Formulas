@@ -9,6 +9,8 @@ import { ModeloYoungComponent } from './modelo-young/modelo-young.component';
 import { LeyHookeComponent } from './ley-hooke/ley-hooke.component';
 import { PrincipioPascalComponent } from './principio-pascal/principio-pascal.component';
 import { CaudalComponent } from './caudal/caudal.component';
+import { LeyContinuidadComponent } from './ley-continuidad/ley-continuidad.component';
+import { BernoulliComponent } from './bernoulli/bernoulli.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { CaudalComponent } from './caudal/caudal.component';
     ModeloYoungComponent,
     LeyHookeComponent,
     PrincipioPascalComponent,
-    CaudalComponent
+    CaudalComponent,
+    LeyContinuidadComponent,
+    BernoulliComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./caudal.component.css']
 })
 export class CaudalComponent {
-  opcion: string = '';  // Opción seleccionada en el formulario
+  opcion: string = ''; // Opción seleccionada en el formulario
   area: number | null = null; // Área de la sección transversal (A)
   velocidad: number | null = null; // Velocidad del fluido (V)
   caudal: number | null = null; // Caudal volumétrico (Q)
@@ -35,13 +35,13 @@ export class CaudalComponent {
         this.resultado = 'Por favor, ingrese valores para el caudal y la densidad.';
       }
     }
-    // Calcular caudal a partir de volumen y tiempo (Q = V / t)
+    // Calcular caudal por volumen y tiempo (Q = V / t)
     else if (this.opcion === 'volumen-tiempo') {
-      if (this.volumen !== null && this.tiempo !== null) {
+      if (this.volumen !== null && this.tiempo !== null && this.tiempo > 0) {
         const caudalPorVolumenTiempo = this.volumen / this.tiempo;
         this.resultado = `El caudal (Q) es ${caudalPorVolumenTiempo.toFixed(2)} m³/s.`;
       } else {
-        this.resultado = 'Por favor, ingrese valores para el volumen y el tiempo.';
+        this.resultado = 'Por favor, ingrese valores válidos para el volumen y el tiempo.';
       }
     }
     // Si no se ha seleccionado ninguna opción

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ley de Continuidad</title>
+  </head>
+  <body>
+    <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+    <div class="container">
+      <h1>Ley de Continuidad</h1>
+      <form>
+        <div class="mb-3">
+          <label for="area1" class="form-label">Área 1 (A₁) en m²:</label>
+          <input
+            type="number"
+            id="area1"
+            [(ngModel)]="area1"
+            name="area1"
+            class="form-control"
+            placeholder="Ingrese el área 1"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="velocidad1" class="form-label">Velocidad 1 (V₁) en m/s:</label>
+          <input
+            type="number"
+            id="velocidad1"
+            [(ngModel)]="velocidad1"
+            name="velocidad1"
+            class="form-control"
+            placeholder="Ingrese la velocidad 1"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="area2" class="form-label">Área 2 (A₂) en m²:</label>
+          <input
+            type="number"
+            id="area2"
+            [(ngModel)]="area2"
+            name="area2"
+            class="form-control"
+            placeholder="Ingrese el área 2"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="velocidad2" class="form-label">Velocidad 2 (V₂) en m/s:</label>
+          <input
+            type="number"
+            id="velocidad2"
+            [(ngModel)]="velocidad2"
+            name="velocidad2"
+            class="form-control"
+            placeholder="Ingrese la velocidad 2 (opcional)"
+          />
+        </div>
+        <button type="button" class="btn btn-primary" (click)="calcular()">Calcular</button>
+      </form>
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+    </div>
+  </body>
+</html>

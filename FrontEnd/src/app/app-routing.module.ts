@@ -7,6 +7,8 @@ import { LeyHookeComponent } from './ley-hooke/ley-hooke.component';
 import { PrincipioPascalComponent } from './principio-pascal/principio-pascal.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { CaudalComponent } from './caudal/caudal.component';
+import { LeyContinuidadComponent } from './ley-continuidad/ley-continuidad.component';
+import { BernoulliComponent } from './bernoulli/bernoulli.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/menuInicio', pathMatch: 'full' },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'principio_pascal', component: PrincipioPascalComponent },
   { path : 'nosotros', component: NosotrosComponent },
   { path : 'caudal', component: CaudalComponent },
+  { path : 'ley_continuidad', component: LeyContinuidadComponent },
+  { path : 'bernoulli', component: BernoulliComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

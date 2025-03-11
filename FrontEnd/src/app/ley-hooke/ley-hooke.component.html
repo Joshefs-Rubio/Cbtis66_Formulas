@@ -10,6 +10,34 @@
       <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
       <h1>Cálculo de la Ley de Hooke</h1>
 
+      <!-- Botón del glosario -->
+      <div class="glosario-container" (click)="toggleGlosario()">
+        <i class="bx bx-bulb"></i>
+        <!-- Icono de foco de Boxicons -->
+      </div>
+
+      <!-- Glosario (se muestra u oculta según la variable mostrarGlosario) -->
+      <div *ngIf="mostrarGlosario" id="glosario" class="glosario">
+        <strong>Glosario:</strong>
+        <ul>
+          <li>
+            <strong>Fuerza Elástica (F):</strong> Es la fuerza que genera una
+            deformación en un cuerpo elástico.
+          </li>
+          <li>
+            <strong>Constante Elástica (k):</strong> Es una medida de la rigidez
+            del material.
+          </li>
+          <li>
+            <strong>Deformación (x):</strong> Es el cambio en la longitud de un
+            material cuando se le aplica una fuerza.
+          </li>
+        </ul>
+        <a href="https://es.wikipedia.org/wiki/Ley_de_Hooke" target="_blank">
+          Más información en Wikipedia
+        </a>
+      </div>
+
       <form>
         <div class="mb-3">
           <label for="opcion" class="form-label"

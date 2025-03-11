@@ -14,10 +14,10 @@ export class CaudalComponent {
   volumen: number | null = null; // Volumen del fluido (V)
   tiempo: number | null = null; // Tiempo (t)
   resultado: string = ''; // Resultado para mostrar en la interfaz
+  mostrarGlosario: boolean = false; // Control para mostrar u ocultar el glosario
 
-  // Método para calcular el caudal volumétrico, flujo másico o caudal por volumen y tiempo
+  // Método para calcular caudal, flujo o caudal a partir de volumen y tiempo
   calcular() {
-    // Calcular caudal volumétrico (Q = A * V)
     if (this.opcion === 'caudal') {
       if (this.area !== null && this.velocidad !== null) {
         const caudalVolumetrico = this.area * this.velocidad;
@@ -25,28 +25,26 @@ export class CaudalComponent {
       } else {
         this.resultado = 'Por favor, ingrese valores para el área y la velocidad.';
       }
-    }
-    // Calcular flujo másico (F = Q * P)
-    else if (this.opcion === 'flujo') {
+    } else if (this.opcion === 'flujo') {
       if (this.caudal !== null && this.densidad !== null) {
         const flujoMasico = this.caudal * this.densidad;
         this.resultado = `El flujo másico (F) es ${flujoMasico.toFixed(2)} kg/s.`;
       } else {
         this.resultado = 'Por favor, ingrese valores para el caudal y la densidad.';
       }
-    }
-    // Calcular caudal a partir de volumen y tiempo (Q = V / t)
-    else if (this.opcion === 'volumen-tiempo') {
+    } else if (this.opcion === 'volumen-tiempo') {
       if (this.volumen !== null && this.tiempo !== null) {
         const caudalPorVolumenTiempo = this.volumen / this.tiempo;
         this.resultado = `El caudal (Q) es ${caudalPorVolumenTiempo.toFixed(2)} m³/s.`;
       } else {
         this.resultado = 'Por favor, ingrese valores para el volumen y el tiempo.';
       }
-    }
-    // Si no se ha seleccionado ninguna opción
-    else {
+    } else {
       this.resultado = 'Seleccione una opción de cálculo.';
     }
+  }
+
+  toggleGlosario() {
+    this.mostrarGlosario = !this.mostrarGlosario;
   }
 }

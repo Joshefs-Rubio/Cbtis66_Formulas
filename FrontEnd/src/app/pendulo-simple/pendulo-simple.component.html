@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo del Péndulo Simple</title>
+    <!-- Link a Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+      <h1>Cálculo del Péndulo Simple</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="opcion" class="form-label">
+            Seleccione qué desea calcular:
+          </label>
+          <select
+            [(ngModel)]="opcion"
+            class="form-select"
+            id="opcion"
+            name="opcion"
+          >
+            <option value="T">Período (T)</option>
+            <option value="L">Longitud (L)</option>
+            <option value="g">Gravedad (g)</option>
+          </select>
+        </div>
+
+        <!-- Si se desea calcular el Período (T): se requieren L y g -->
+        <div class="mb-3" *ngIf="opcion === 'T'">
+          <label for="longitud" class="form-label">
+            Longitud (L) en metros (m):
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="L"
+            class="form-control"
+            id="longitud"
+            placeholder="Ingrese la longitud"
+            name="longitud"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'T'">
+          <label for="gravedad" class="form-label">
+            Aceleración de la Gravedad (g) en m/s²:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="g"
+            class="form-control"
+            id="gravedad"
+            placeholder="Ingrese g"
+            name="gravedad"
+          />
+        </div>
+
+        <!-- Si se desea calcular la Longitud (L): se requieren T y g -->
+        <div class="mb-3" *ngIf="opcion === 'L'">
+          <label for="periodo" class="form-label">
+            Período (T) en segundos (s):
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="T"
+            class="form-control"
+            id="periodo"
+            placeholder="Ingrese el período"
+            name="periodo"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'L'">
+          <label for="gravedadL" class="form-label">
+            Aceleración de la Gravedad (g) en m/s²:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="g"
+            class="form-control"
+            id="gravedadL"
+            placeholder="Ingrese g"
+            name="gravedadL"
+          />
+        </div>
+
+        <!-- Si se desea calcular la Gravedad (g): se requieren T y L -->
+        <div class="mb-3" *ngIf="opcion === 'g'">
+          <label for="periodoG" class="form-label">
+            Período (T) en segundos (s):
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="T"
+            class="form-control"
+            id="periodoG"
+            placeholder="Ingrese el período"
+            name="periodoG"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'g'">
+          <label for="longitudG" class="form-label">
+            Longitud (L) en metros (m):
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="L"
+            class="form-control"
+            id="longitudG"
+            placeholder="Ingrese la longitud"
+            name="longitudG"
+          />
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">
+          Calcular
+        </button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+
+      <!-- Ícono del glosario (foquito) -->
+      <div class="glosario-container" (click)="toggleGlosario()">
+        <i class="bx bx-bulb"></i>
+      </div>
+
+      <!-- Panel del glosario -->
+      <div *ngIf="mostrarGlosario" id="glosario" class="glosario">
+        <strong>Glosario:</strong>
+        <ul>
+          <li>
+            <strong>Período (T):</strong> Tiempo que tarda el péndulo en
+            realizar un ciclo completo.
+            <a
+              href="https://es.wikipedia.org/wiki/P%C3%A9ndulo_simple"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Longitud (L):</strong> Distancia desde el punto de
+            suspensión hasta el centro de masa del péndulo.
+            <a
+              href="https://es.wikipedia.org/wiki/P%C3%A9ndulo_simple"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Gravedad (g):</strong> Aceleración que experimenta un cuerpo
+            debido a la fuerza de la Tierra.
+            <a href="https://es.wikipedia.org/wiki/Graved%C3%A1" target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Péndulo Simple:</strong> Sistema físico que oscila bajo la
+            influencia de la gravedad.
+            <a
+              href="https://es.wikipedia.org/wiki/P%C3%A9ndulo_simple"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

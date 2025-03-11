@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./modelo-young.component.css']
 })
 export class ModeloYoungComponent {
-
   opcion: string = 'moduloYoung'; // Por defecto, calcular Módulo de Young
   tension: number | null = null;
   deformacion: number | null = null;
   moduloYoung: number | null = null;
   resultado: string = '';
+
+  // Variable para controlar la visibilidad del glosario
+  mostrarGlosario: boolean = false;
 
   calcular() {
     if (this.opcion === 'moduloYoung') {
@@ -39,5 +41,10 @@ export class ModeloYoungComponent {
         this.resultado = 'Por favor ingrese valores válidos para la tensión y el Módulo de Young.';
       }
     }
+  }
+
+  // Método para alternar la visibilidad del glosario
+  toggleGlosario() {
+    this.mostrarGlosario = !this.mostrarGlosario;
   }
 }

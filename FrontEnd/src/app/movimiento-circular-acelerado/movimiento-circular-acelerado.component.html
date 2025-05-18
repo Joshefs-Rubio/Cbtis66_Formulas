@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo del Movimiento Circular Uniformemente Acelerado</title>
+    <!-- Link a Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+      <h1>Cálculo del Movimiento Circular Uniformemente Acelerado</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="opcion" class="form-label">
+            Seleccione qué desea calcular:
+          </label>
+          <select
+            [(ngModel)]="opcion"
+            class="form-select"
+            id="opcion"
+            name="opcion"
+          >
+            <option value="θ">Desplazamiento Angular (θ)</option>
+            <option value="α">Aceleración Angular (α)</option>
+            <option value="ω">Velocidad Angular Final (ω)</option>
+          </select>
+        </div>
+
+        <!-- Para calcular Desplazamiento Angular (θ): se requieren ω₀, α y t -->
+        <div class="mb-3" *ngIf="opcion === 'θ'">
+          <label for="omega0_theta" class="form-label">
+            Velocidad Angular Inicial (ω₀) en rad/s:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="omega0"
+            class="form-control"
+            id="omega0_theta"
+            placeholder="Ingrese ω₀"
+            name="omega0_theta"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'θ'">
+          <label for="alpha_theta" class="form-label">
+            Aceleración Angular (α) en rad/s²:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="alpha"
+            class="form-control"
+            id="alpha_theta"
+            placeholder="Ingrese α"
+            name="alpha_theta"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'θ'">
+          <label for="tiempo_theta" class="form-label">
+            Tiempo (t) en s:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="t"
+            class="form-control"
+            id="tiempo_theta"
+            placeholder="Ingrese el tiempo"
+            name="tiempo_theta"
+          />
+        </div>
+
+        <!-- Para calcular Aceleración Angular (α): se requieren ω₀, θ y t -->
+        <div class="mb-3" *ngIf="opcion === 'α'">
+          <label for="omega0_alpha" class="form-label">
+            Velocidad Angular Inicial (ω₀) en rad/s:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="omega0"
+            class="form-control"
+            id="omega0_alpha"
+            placeholder="Ingrese ω₀"
+            name="omega0_alpha"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'α'">
+          <label for="theta_alpha" class="form-label">
+            Desplazamiento Angular (θ) en radianes:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="theta"
+            class="form-control"
+            id="theta_alpha"
+            placeholder="Ingrese θ"
+            name="theta_alpha"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'α'">
+          <label for="tiempo_alpha" class="form-label">
+            Tiempo (t) en s:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="t"
+            class="form-control"
+            id="tiempo_alpha"
+            placeholder="Ingrese el tiempo"
+            name="tiempo_alpha"
+          />
+        </div>
+
+        <!-- Para calcular Velocidad Angular Final (ω): se requieren ω₀, α y t -->
+        <div class="mb-3" *ngIf="opcion === 'ω'">
+          <label for="omega0_omega" class="form-label">
+            Velocidad Angular Inicial (ω₀) en rad/s:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="omega0"
+            class="form-control"
+            id="omega0_omega"
+            placeholder="Ingrese ω₀"
+            name="omega0_omega"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'ω'">
+          <label for="alpha_omega" class="form-label">
+            Aceleración Angular (α) en rad/s²:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="alpha"
+            class="form-control"
+            id="alpha_omega"
+            placeholder="Ingrese α"
+            name="alpha_omega"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'ω'">
+          <label for="tiempo_omega" class="form-label">
+            Tiempo (t) en s:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="t"
+            class="form-control"
+            id="tiempo_omega"
+            placeholder="Ingrese el tiempo"
+            name="tiempo_omega"
+          />
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">
+          Calcular
+        </button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+
+      <!-- Ícono del glosario (foquito) -->
+      <div class="glosario-container" (click)="toggleGlosario()">
+        <i class="bx bx-bulb"></i>
+      </div>
+
+      <!-- Panel del glosario -->
+      <div *ngIf="mostrarGlosario" id="glosario" class="glosario">
+        <strong>Glosario:</strong>
+        <ul>
+          <li>
+            <strong>Desplazamiento Angular (θ):</strong> Ángulo recorrido por el
+            objeto en radianes.
+            <a href="https://es.wikipedia.org/wiki/Ángulo" target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Aceleración Angular (α):</strong> Cambio en la velocidad
+            angular por unidad de tiempo (rad/s²).
+            <a
+              href="https://es.wikipedia.org/wiki/Aceleración_angular"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Velocidad Angular Final (ω):</strong> Velocidad angular
+            alcanzada al final del intervalo (rad/s).
+            <a
+              href="https://es.wikipedia.org/wiki/Velocidad_angular"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Movimiento Circular Uniformemente Acelerado:</strong>
+            Movimiento en el que la aceleración angular es constante.
+            <a
+              href="https://es.wikipedia.org/wiki/Aceleración_angular"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

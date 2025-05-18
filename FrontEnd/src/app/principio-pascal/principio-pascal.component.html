@@ -3,18 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cálculo del Principio de Pascal</title>
+    <!-- Link a Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
       <h1>Cálculo del Principio de Pascal</h1>
 
+      <!-- Contenedor del formulario -->
       <form>
         <div class="mb-3">
-          <label for="opcion" class="form-label"
-            >Seleccione qué desea calcular:</label
-          >
+          <label for="opcion" class="form-label">
+            Seleccione qué desea calcular:
+          </label>
           <select
             [(ngModel)]="opcion"
             class="form-select"
@@ -27,7 +33,7 @@
           </select>
         </div>
 
-        <!-- Campo de entrada para la Presión -->
+        <!-- Campo para Presión -->
         <div class="mb-3" *ngIf="opcion === 'presion'">
           <label for="presion1" class="form-label"
             >Presión (P1) en Pascales (Pa):</label
@@ -42,7 +48,7 @@
           />
         </div>
 
-        <!-- Campo de entrada para la Fuerza -->
+        <!-- Campo para Fuerza -->
         <div class="mb-3" *ngIf="opcion === 'fuerza'">
           <label for="fuerza1" class="form-label"
             >Fuerza (F1) en Newtons (N):</label
@@ -81,7 +87,7 @@
           />
         </div>
 
-        <!-- Campo de entrada para el Área -->
+        <!-- Campo para Área -->
         <div class="mb-3" *ngIf="opcion === 'area'">
           <label for="fuerza1" class="form-label"
             >Fuerza (F1) en Newtons (N):</label
@@ -115,6 +121,51 @@
 
       <div class="mt-4">
         <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+
+      <!-- Contenedor del glosario con el ícono de Boxicons -->
+      <div class="glosario-container" (click)="toggleGlosario()">
+        <i class="bx bx-bulb"></i>
+      </div>
+
+      <!-- Panel del glosario -->
+      <div *ngIf="mostrarGlosario" id="glosario" class="glosario">
+        <strong>Glosario:</strong>
+        <ul>
+          <li>
+            <strong>Presión (P):</strong> La fuerza ejercida sobre una unidad de
+            área.
+            <a href="https://es.wikipedia.org/wiki/Presi%C3%B3n" target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Fuerza (F):</strong> La interacción que cambia el estado de
+            movimiento de un objeto.
+            <a
+              href="https://es.wikipedia.org/wiki/Fuerza_(f%C3%ADsica)"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Área (A):</strong> La cantidad de espacio que ocupa una
+            superficie.
+            <a href="https://es.wikipedia.org/wiki/%C3%81rea" target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Principio de Pascal:</strong> Todo cambio en la presión
+            aplicado a un fluido confinado se transmite íntegramente a todas las
+            partes del fluido.
+            <a
+              href="https://es.wikipedia.org/wiki/Principio_de_Pascal"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </body>

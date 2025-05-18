@@ -1,13 +1,16 @@
-/* Fondo de la página */
 body {
   background-color: #e8f5e9;
-  opacity: 0; 
-  animation: fadeIn 2s ease forwards;
   font-family: 'Poppins', sans-serif;
-  
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
 }
 
-/* Contenedor central */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .container {
   background-color: #ffffff;
   padding: 40px;
@@ -15,12 +18,11 @@ body {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   max-width: 600px;
   margin: 40px auto;
-  border: none;
+  position: relative;
 }
 
-/* Encabezado */
 h1 {
-  color: #2e5530; 
+  color: #2e5530;
   font-size: 2.5rem;
   font-weight: 600;
   text-align: center;
@@ -28,27 +30,27 @@ h1 {
   letter-spacing: 0.5px;
 }
 
-/* Estilos de los campos de entrada y select */
-input[type="number"], select {
-  border: 1px solid #d0d0d0; 
+input[type="number"],
+select {
+  border: 1px solid #d0d0d0;
   border-radius: 12px;
   padding: 12px;
   font-size: 1.1rem;
   background-color: #fafafa;
-  color: #333; 
+  color: #333;
   transition: all 0.3s ease;
   width: 100%;
   appearance: none;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
-input[type="number"]:focus, select:focus {
-  border-color: #2e5530; 
+input[type="number"]:focus,
+select:focus {
+  border-color: #2e5530;
   outline: none;
   box-shadow: 0 0 12px rgba(46, 85, 48, 0.2);
 }
 
-/* Botón */
 button {
   background-color: #2e5530;
   border: none;
@@ -59,15 +61,14 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  box-shadow: 0 8px 16px rgba(46, 85, 48, 0.3); 
+  box-shadow: 0 8px 16px rgba(46, 85, 48, 0.3);
 }
 
 button:hover {
-  background-color: #1f3b20; 
+  background-color: #1f3b20;
   box-shadow: 0 12px 24px rgba(46, 85, 48, 0.4);
 }
 
-/* Resultado */
 #resultado {
   color: #2e5530;
   font-weight: bold;
@@ -77,21 +78,20 @@ button:hover {
   letter-spacing: 0.3px;
 }
 
-/* Estilos personalizados para el select */
 select {
-  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"%23333\" class=\"bi bi-chevron-down\" viewBox=\"0 0 16 16\"><path fill-rule=\"evenodd\" d=\"M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z\"/></svg>');
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23333" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 16px;
   padding-right: 50px;
 }
 
-/* Transiciones suaves en general */
-select, input[type="number"], button {
+select,
+input[type="number"],
+button {
   transition: all 0.3s ease;
 }
 
-/* Espaciado adicional para un diseño más limpio */
 .mb-3 {
   margin-bottom: 20px;
 }
@@ -115,13 +115,14 @@ select, input[type="number"], button {
   color: white;
 }
 
-/* Estilos para el icono y glosario */
+/* Ícono del glosario */
 .glosario-container {
   position: fixed;
   top: 20px;
   right: 20px;
   cursor: pointer;
   font-size: 24px;
+  color: #2e5530;
 }
 
 .glosario {

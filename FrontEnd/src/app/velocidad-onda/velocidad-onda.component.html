@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo de la Velocidad de Onda</title>
+    <!-- Link a Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+      <h1>Cálculo de la Velocidad de Onda</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="opcion" class="form-label">
+            Seleccione qué desea calcular:
+          </label>
+          <select
+            [(ngModel)]="opcion"
+            class="form-select"
+            id="opcion"
+            name="opcion"
+          >
+            <option value="v">Velocidad de Onda (v)</option>
+            <option value="f">Frecuencia (f)</option>
+            <option value="λ">Longitud de Onda (λ)</option>
+          </select>
+        </div>
+
+        <!-- Para calcular la Velocidad (v): se requieren f y λ -->
+        <div class="mb-3" *ngIf="opcion === 'v'">
+          <label for="frecuencia" class="form-label">
+            Frecuencia (f) en Hz:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="f"
+            class="form-control"
+            id="frecuencia"
+            placeholder="Ingrese la frecuencia"
+            name="frecuencia"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'v'">
+          <label for="longitudOnda" class="form-label">
+            Longitud de Onda (λ) en metros (m):
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="lambda"
+            class="form-control"
+            id="longitudOnda"
+            placeholder="Ingrese la longitud de onda"
+            name="longitudOnda"
+          />
+        </div>
+
+        <!-- Para calcular la Frecuencia (f): se requieren v y λ -->
+        <div class="mb-3" *ngIf="opcion === 'f'">
+          <label for="velocidad" class="form-label">
+            Velocidad de Onda (v) en m/s:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="v"
+            class="form-control"
+            id="velocidad"
+            placeholder="Ingrese la velocidad"
+            name="velocidad"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'f'">
+          <label for="longitudOndaF" class="form-label">
+            Longitud de Onda (λ) en metros (m):
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="lambda"
+            class="form-control"
+            id="longitudOndaF"
+            placeholder="Ingrese la longitud de onda"
+            name="longitudOndaF"
+          />
+        </div>
+
+        <!-- Para calcular la Longitud de Onda (λ): se requieren v y f -->
+        <div class="mb-3" *ngIf="opcion === 'λ'">
+          <label for="velocidadL" class="form-label">
+            Velocidad de Onda (v) en m/s:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="v"
+            class="form-control"
+            id="velocidadL"
+            placeholder="Ingrese la velocidad"
+            name="velocidadL"
+          />
+        </div>
+        <div class="mb-3" *ngIf="opcion === 'λ'">
+          <label for="frecuenciaL" class="form-label">
+            Frecuencia (f) en Hz:
+          </label>
+          <input
+            type="number"
+            [(ngModel)]="f"
+            class="form-control"
+            id="frecuenciaL"
+            placeholder="Ingrese la frecuencia"
+            name="frecuenciaL"
+          />
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">
+          Calcular
+        </button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+
+      <!-- Ícono del glosario (foquito) -->
+      <div class="glosario-container" (click)="toggleGlosario()">
+        <i class="bx bx-bulb"></i>
+      </div>
+
+      <!-- Panel del glosario -->
+      <div *ngIf="mostrarGlosario" id="glosario" class="glosario">
+        <strong>Glosario:</strong>
+        <ul>
+          <li>
+            <strong>Velocidad de Onda (v):</strong> Es la distancia que recorre
+            una onda por unidad de tiempo.
+            <a
+              href="https://es.wikipedia.org/wiki/Velocidad_de_onda"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Frecuencia (f):</strong> Número de ciclos u oscilaciones por
+            segundo.
+            <a href="https://es.wikipedia.org/wiki/Frecuencia" target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Longitud de Onda (λ):</strong> Distancia entre dos puntos
+            consecutivos en fase (por ejemplo, dos crestas).
+            <a
+              href="https://es.wikipedia.org/wiki/Longitud_de_onda"
+              target="_blank"
+              >Ver más</a
+            >
+          </li>
+          <li>
+            <strong>Onda:</strong> Perturbación que se propaga desde una fuente
+            y transfiere energía.
+            <a href="https://es.wikipedia.org/wiki/Onda" target="_blank"
+              >Ver más</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

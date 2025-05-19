@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efecto Doppler</title>
+  </head>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+
+      <h1>Efecto Doppler</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="opcion" class="form-label">Seleccione qué desea calcular:</label>
+          <select
+            [(ngModel)]="opcion"
+            class="form-select"
+            id="opcion"
+            name="opcion"
+          >
+            <option value="frecuenciaPercibida">Frecuencia percibida (f')</option>
+            <option value="velocidadObservador">Velocidad del observador (vₒ)</option>
+            <option value="frecuenciaEmitida">Frecuencia emitida (f)</option>
+          </select>
+        </div>
+
+        <!-- Campo para frecuencia emitida -->
+        <div class="mb-3" *ngIf="opcion !== 'frecuenciaEmitida'">
+          <label for="frecuenciaEmitida" class="form-label">Frecuencia emitida (f) en Hz:</label>
+          <input
+            type="number"
+            [(ngModel)]="frecuenciaEmitida"
+            class="form-control"
+            id="frecuenciaEmitida"
+            name="frecuenciaEmitida"
+            placeholder="Ingrese la frecuencia emitida"
+          />
+        </div>
+
+        <!-- Campo para velocidad del observador -->
+        <div class="mb-3" *ngIf="opcion !== 'velocidadObservador'">
+          <label for="velocidadObservador" class="form-label">Velocidad del observador (vₒ) en m/s:</label>
+          <input
+            type="number"
+            [(ngModel)]="velocidadObservador"
+            class="form-control"
+            id="velocidadObservador"
+            name="velocidadObservador"
+            placeholder="Ingrese la velocidad del observador"
+          />
+        </div>
+
+        <!-- Campo para frecuencia percibida -->
+        <div class="mb-3" *ngIf="opcion !== 'frecuenciaPercibida'">
+          <label for="frecuenciaPercibida" class="form-label">Frecuencia percibida (f') en Hz:</label>
+          <input
+            type="number"
+            [(ngModel)]="frecuenciaPercibida"
+            class="form-control"
+            id="frecuenciaPercibida"
+            name="frecuenciaPercibida"
+            placeholder="Ingrese la frecuencia percibida"
+          />
+        </div>
+
+        <!-- Campo para velocidad del sonido (siempre se pide) -->
+        <div class="mb-3">
+          <label for="velocidadSonido" class="form-label">Velocidad del sonido (v) en m/s:</label>
+          <input
+            type="number"
+            [(ngModel)]="velocidadSonido"
+            class="form-control"
+            id="velocidadSonido"
+            name="velocidadSonido"
+            placeholder="Ingrese la velocidad del sonido"
+          />
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">Calcular</button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+    </div>
+  </body>
+</html>

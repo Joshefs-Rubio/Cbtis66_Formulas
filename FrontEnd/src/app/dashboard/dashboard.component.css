@@ -96,6 +96,53 @@ header {
   color: #444;
 }
 
+.separator {
+  border: none;
+  border-top: 2px solid #00a86b;
+  margin: 40px auto;
+  width: 80%;
+}
+
+.second-partial {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.second-partial h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.second-partial ul {
+  list-style: none;
+  padding: 0;
+  color: #444;
+}
+
+.second-partial ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 20px;
+}
+
+.second-partial ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: #00a86b;
+}
+
+
 /* Media Queries para móviles */
 @media (max-width: 768px) {
   .hero h2 {
@@ -117,3 +164,4 @@ header {
     max-width: 400px;
   }
 }
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ley de Ohm</title>
+</head>
+<body>
+  <div class="container">
+  <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+
+  <h1>Ley de Ohm y Potencia Eléctrica</h1>
+
+  <form>
+    <div class="mb-3">
+      <label for="opcion" class="form-label">¿Qué deseas calcular?</label>
+      <select [(ngModel)]="opcion" name="opcion" class="form-select">
+        <option value="voltaje">Voltaje (V)</option>
+        <option value="corriente">Corriente (I)</option>
+        <option value="resistencia">Resistencia (R)</option>
+        <option value="potencia">Potencia (P)</option>
+      </select>
+    </div>
+
+    <!-- Inputs dependiendo de la opción seleccionada -->
+    <!-- Calcular Voltaje -->
+    <div *ngIf="opcion === 'voltaje'">
+      <div class="mb-3">
+        <label for="corriente">Corriente (A):</label>
+        <input type="number" [(ngModel)]="corriente" name="corriente" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="resistencia">Resistencia (Ω):</label>
+        <input type="number" [(ngModel)]="resistencia" name="resistencia" class="form-control" />
+      </div>
+    </div>
+
+    <!-- Calcular Corriente -->
+    <div *ngIf="opcion === 'corriente'">
+      <div class="mb-3">
+        <label for="voltaje">Voltaje (V):</label>
+        <input type="number" [(ngModel)]="voltaje" name="voltaje" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="resistencia">Resistencia (Ω):</label>
+        <input type="number" [(ngModel)]="resistencia" name="resistencia" class="form-control" />
+      </div>
+    </div>
+
+    <!-- Calcular Resistencia -->
+    <div *ngIf="opcion === 'resistencia'">
+      <div class="mb-3">
+        <label for="voltaje">Voltaje (V):</label>
+        <input type="number" [(ngModel)]="voltaje" name="voltaje" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="corriente">Corriente (A):</label>
+        <input type="number" [(ngModel)]="corriente" name="corriente" class="form-control" />
+      </div>
+    </div>
+
+    <!-- Calcular Potencia -->
+    <div *ngIf="opcion === 'potencia'">
+      <div class="mb-3">
+        <label for="voltaje">Voltaje (V):</label>
+        <input type="number" [(ngModel)]="voltaje" name="voltaje" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="corriente">Corriente (A):</label>
+        <input type="number" [(ngModel)]="corriente" name="corriente" class="form-control" />
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="calcular()">Calcular</button>
+  </form>
+
+  <div class="mt-4">
+    <h3 id="resultado">{{ resultado }}</h3>
+  </div>
+</div>
+
+</body>
+</html>

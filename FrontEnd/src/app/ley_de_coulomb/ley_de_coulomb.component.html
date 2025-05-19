@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ley de Coulomb</title>
+  </head>
+  <body>
+    <div class="container">
+      <a routerLink="/dashboard" class="btn-regresar">Regresar</a>
+
+      <h1>Ley de Coulomb</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="opcion" class="form-label">Seleccione la operación a realizar:</label>
+          <select [(ngModel)]="opcion" class="form-select" id="opcion" name="opcion">
+            <option value="fuerzaEntreCargas">Calcular fuerza entre dos cargas</option>
+            <option value="distancia">Calcular distancia (r)</option>
+            <option value="cargaDesconocida">Calcular carga desconocida (q)</option>
+            <option value="superposicion">Superposición de fuerzas (tercera carga)</option>
+          </select>
+        </div>
+
+        <!-- Campos comunes para fuerza entre cargas -->
+        <div *ngIf="opcion === 'fuerzaEntreCargas'">
+          <div class="mb-3">
+            <label for="q1">Carga q₁ (C):</label>
+            <input type="number" class="form-control" [(ngModel)]="q1" name="q1" />
+          </div>
+          <div class="mb-3">
+            <label for="q2">Carga q₂ (C):</label>
+            <input type="number" class="form-control" [(ngModel)]="q2" name="q2" />
+          </div>
+          <div class="mb-3">
+            <label for="r">Distancia entre cargas (m):</label>
+            <input type="number" class="form-control" [(ngModel)]="r" name="r" />
+          </div>
+        </div>
+
+        <!-- Para distancia -->
+        <div *ngIf="opcion === 'distancia'">
+          <div class="mb-3">
+            <label for="q1">Carga q₁ (C):</label>
+            <input type="number" class="form-control" [(ngModel)]="q1" name="q1" />
+          </div>
+          <div class="mb-3">
+            <label for="q2">Carga q₂ (C):</label>
+            <input type="number" class="form-control" [(ngModel)]="q2" name="q2" />
+          </div>
+          <div class="mb-3">
+            <label for="f">Fuerza (N):</label>
+            <input type="number" class="form-control" [(ngModel)]="fuerza" name="fuerza" />
+          </div>
+        </div>
+
+        <!-- Para carga desconocida -->
+        <div *ngIf="opcion === 'cargaDesconocida'">
+          <div class="mb-3">
+            <label for="f">Fuerza (N):</label>
+            <input type="number" class="form-control" [(ngModel)]="fuerza" name="fuerza" />
+          </div>
+          <div class="mb-3">
+            <label for="q2">Carga conocida (q₂) en C:</label>
+            <input type="number" class="form-control" [(ngModel)]="q2" name="q2" />
+          </div>
+          <div class="mb-3">
+            <label for="r">Distancia entre cargas (m):</label>
+            <input type="number" class="form-control" [(ngModel)]="r" name="r" />
+          </div>
+        </div>
+
+        <!-- Para superposición de fuerzas -->
+        <div *ngIf="opcion === 'superposicion'">
+          <div class="mb-3">
+            <label for="q1">Carga q₁ (C):</label>
+            <input type="number" class="form-control" [(ngModel)]="q1" name="q1" />
+          </div>
+          <div class="mb-3">
+            <label for="q2">Carga q₂ (C):</label>
+            <input type="number" class="form-control" [(ngModel)]="q2" name="q2" />
+          </div>
+          <div class="mb-3">
+            <label for="q3">Carga q₃ (C):</label>
+            <input type="number" class="form-control" [(ngModel)]="q3" name="q3" />
+          </div>
+          <div class="mb-3">
+            <label for="r13">Distancia entre q₁ y q₃ (m):</label>
+            <input type="number" class="form-control" [(ngModel)]="r13" name="r13" />
+          </div>
+          <div class="mb-3">
+            <label for="r23">Distancia entre q₂ y q₃ (m):</label>
+            <input type="number" class="form-control" [(ngModel)]="r23" name="r23" />
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="calcular()">Calcular</button>
+      </form>
+
+      <div class="mt-4">
+        <h3 id="resultado">{{ resultado }}</h3>
+      </div>
+    </div>
+  </body>
+</html>

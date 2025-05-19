@@ -9,6 +9,10 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { CaudalComponent } from './caudal/caudal.component';
 import { LeyContinuidadComponent } from './ley-continuidad/ley-continuidad.component';
 import { BernoulliComponent } from './bernoulli/bernoulli.component';
+import { Velocidad_del_sonidoComponent } from './velocidad_del_sonido/velocidad_del_sonido.component';
+import { Efecto_dopplerComponent } from './efecto_doppler/efecto_doppler.component';
+import { Ley_de_coulombComponent } from './ley_de_coulomb/ley_de_coulomb.component';
+import { Ley_de_ohmComponent } from './ley_de_ohm/ley_de_ohm.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/menuInicio', pathMatch: 'full' },
@@ -21,6 +25,10 @@ const routes: Routes = [
   { path : 'caudal', component: CaudalComponent },
   { path : 'ley_continuidad', component: LeyContinuidadComponent },
   { path : 'bernoulli', component: BernoulliComponent },
+  { path : 'velocidad_del_sonido', component: Velocidad_del_sonidoComponent },
+  { path : 'efecto_doppler', component: Efecto_dopplerComponent },
+  { path : 'ley_de_coulomb', component: Ley_de_coulombComponent },
+  { path : 'ley_de_ohm', component: Ley_de_ohmComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

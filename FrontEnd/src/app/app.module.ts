@@ -11,8 +11,13 @@ import { PrincipioPascalComponent } from './principio-pascal/principio-pascal.co
 import { CaudalComponent } from './caudal/caudal.component';
 import { LeyContinuidadComponent } from './ley-continuidad/ley-continuidad.component';
 import { BernoulliComponent } from './bernoulli/bernoulli.component';
+import { Velocidad_del_sonidoComponent } from './velocidad_del_sonido/velocidad_del_sonido.component';
+import { Efecto_dopplerComponent } from './efecto_doppler/efecto_doppler.component';
+import { Ley_de_coulombComponent } from './ley_de_coulomb/ley_de_coulomb.component';
+import { Ley_de_ohmComponent } from './ley_de_ohm/ley_de_ohm.component';
+
 @NgModule({
-  declarations: [
+  declarations: [				
     AppComponent,
     DashboardComponent,
     MenuInicioComponent,
@@ -22,7 +27,11 @@ import { BernoulliComponent } from './bernoulli/bernoulli.component';
     CaudalComponent,
     LeyContinuidadComponent,
     BernoulliComponent,
-  ],
+      Velocidad_del_sonidoComponent,
+      Efecto_dopplerComponent,
+      Ley_de_coulombComponent,
+      Ley_de_ohmComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

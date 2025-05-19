@@ -11,9 +11,6 @@ export class LeyHookeComponent {
   constante: number | null = null;
   deformacion: number | null = null;
   resultado: string = '';
-  
-  // Variable para controlar la visibilidad del glosario
-  mostrarGlosario: boolean = false;
 
   calcular() {
     if (this.opcion === 'fuerza' && this.constante && this.deformacion) {
@@ -25,11 +22,5 @@ export class LeyHookeComponent {
     } else {
       this.resultado = 'Por favor, ingrese los valores válidos.';
     }
-  }
-
-  // Método para alternar la visibilidad del glosario
-  toggleGlosario
-  () {
-    this.mostrarGlosario = !this.mostrarGlosario;
   }
 }

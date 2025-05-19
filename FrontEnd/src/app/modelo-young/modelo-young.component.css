@@ -4,7 +4,6 @@ body {
   opacity: 0; 
   animation: fadeIn 2s ease forwards;
   font-family: 'Poppins', sans-serif;
-  
 }
 
 /* Contenedor central */
@@ -79,7 +78,7 @@ button:hover {
 
 /* Estilos personalizados para el select */
 select {
-  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"%23333\" class=\"bi bi-chevron-down\" viewBox=\"0 0 16 16\"><path fill-rule=\"evenodd\" d=\"M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z\"/></svg>');
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23333" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 16px;
@@ -113,24 +112,4 @@ select, input[type="number"], button {
 .btn-regresar:hover {
   background-color: #2e5530;
   color: white;
-}
-
-/* Estilos para el icono y glosario */
-.glosario-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-.glosario {
-  position: fixed;
-  top: 60px;
-  right: 20px;
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 250px;
 }

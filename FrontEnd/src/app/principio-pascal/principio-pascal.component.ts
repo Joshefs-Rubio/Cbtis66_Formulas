@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class PrincipioPascalComponent {
   opcion: string = 'presion';
   presion1: number | null = null;
+  presion2: number | null = null;
   fuerza1: number | null = null;
   fuerza2: number | null = null;
   area1: number | null = null;
   area2: number | null = null;
   resultado: string = '';
-  mostrarGlosario: boolean = false;
 
   calcular() {
     if (this.opcion === 'presion') {
@@ -30,14 +30,10 @@ export class PrincipioPascalComponent {
       }
     } else if (this.opcion === 'area') {
       if (this.fuerza1 && this.fuerza2) {
-        this.resultado = `El área A2 es ${(this.fuerza2 / this.fuerza1) * (this.area1 ?? 0)} m²`;
+        this.resultado = `La relación de áreas es ${this.fuerza1 / this.fuerza2}`;
       } else {
-        this.resultado = 'Por favor, ingrese los valores de F1 y F2.';
+        this.resultado = 'Por favor, ingrese las fuerzas F1 y F2.';
       }
     }
   }
-
-  toggleGlosario() {
-    this.mostrarGlosario = !this.mostrarGlosario;
-  }
-}
+} 

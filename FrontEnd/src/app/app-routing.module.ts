@@ -13,6 +13,10 @@ import { Velocidad_del_sonidoComponent } from './velocidad_del_sonido/velocidad_
 import { Efecto_dopplerComponent } from './efecto_doppler/efecto_doppler.component';
 import { Ley_de_coulombComponent } from './ley_de_coulomb/ley_de_coulomb.component';
 import { Ley_de_ohmComponent } from './ley_de_ohm/ley_de_ohm.component';
+import { MenuJuegosComponent } from './Menu-juegos/Menu-juegos.component';
+import { Sopla_vueloComponent } from './sopla_vuelo/sopla_vuelo.component';
+import { Tira_estiraComponent } from './tira_estira/tira_estira.component';
+import { Vuelo_bernoulliComponent } from './vuelo_bernoulli/vuelo_bernoulli.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/menuInicio', pathMatch: 'full' },
@@ -29,6 +33,10 @@ const routes: Routes = [
   { path : 'efecto_doppler', component: Efecto_dopplerComponent },
   { path : 'ley_de_coulomb', component: Ley_de_coulombComponent },
   { path : 'ley_de_ohm', component: Ley_de_ohmComponent },
+  { path: 'menu_juegos', component: MenuJuegosComponent },
+  { path: 'sopla_vuelo', component: Sopla_vueloComponent },
+  { path: 'tira_estira', component: Tira_estiraComponent },
+  { path: 'vuelo_bernoulli', component: Vuelo_bernoulliComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

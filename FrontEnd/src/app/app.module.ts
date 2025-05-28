@@ -15,9 +15,13 @@ import { Velocidad_del_sonidoComponent } from './velocidad_del_sonido/velocidad_
 import { Efecto_dopplerComponent } from './efecto_doppler/efecto_doppler.component';
 import { Ley_de_coulombComponent } from './ley_de_coulomb/ley_de_coulomb.component';
 import { Ley_de_ohmComponent } from './ley_de_ohm/ley_de_ohm.component';
+import { MenuJuegosComponent } from './Menu-juegos/Menu-juegos.component';
+import { Tira_estiraComponent } from './tira_estira/tira_estira.component';
+import { Vuelo_bernoulliComponent } from './vuelo_bernoulli/vuelo_bernoulli.component';
+import { Sopla_vueloComponent } from './sopla_vuelo/sopla_vuelo.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [								
     AppComponent,
     DashboardComponent,
     MenuInicioComponent,
@@ -30,7 +34,11 @@ import { Ley_de_ohmComponent } from './ley_de_ohm/ley_de_ohm.component';
       Velocidad_del_sonidoComponent,
       Efecto_dopplerComponent,
       Ley_de_coulombComponent,
-      Ley_de_ohmComponent
+      Ley_de_ohmComponent,
+      MenuJuegosComponent,
+      Tira_estiraComponent,
+      Vuelo_bernoulliComponent,
+      Sopla_vueloComponent
    ],
   imports: [
     BrowserModule,

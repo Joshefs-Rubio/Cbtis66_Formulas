@@ -1,0 +1,167 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  opacity: 0; 
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Header */
+header {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Sección Hero */
+.hero {
+  background-color: #e7ecef;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Container de tarjetas */
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  width: 100%;
+  flex: 1;
+}
+
+/* Tarjeta */
+.card {
+  background-color: white;
+  border-radius: 16px;
+  width: calc(100% / 3 - 40px);
+  max-width: 300px;
+  padding: 20px;
+  height: 230px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid #00a86b;
+}
+
+.card i {
+  font-size: 60px;
+  color: #00a86b;
+  margin-bottom: 15px;
+}
+
+.card h5 {
+  font-size: 22px;
+  margin-top: 10px;
+  color: #444;
+}
+
+.separator {
+  border: none;
+  border-top: 2px solid #00a86b;
+  margin: 40px auto;
+  width: 80%;
+}
+
+.second-partial {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.second-partial h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.second-partial ul {
+  list-style: none;
+  padding: 0;
+  color: #444;
+}
+
+.second-partial ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 20px;
+}
+
+.second-partial ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: #00a86b;
+}
+
+
+/* Media Queries para móviles */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .container-cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+

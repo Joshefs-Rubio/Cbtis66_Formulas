@@ -1,0 +1,25 @@
+<div class="instructions" [class.hidden]="hideInstructions">
+  <h2>🎯 ¡Desafío de la Liga de Hooke!</h2>
+  <p>
+    Arrastra el <strong>nudo verde</strong> hacia atrás y suéltalo para lanzar el proyectil.<br>
+    ¡Acierta en la <span class="red">diana roja</span> para ganar!
+  </p>
+  <button (click)="hideInstructions = true">¡Entendido!</button>
+</div>
+
+<div class="game-wrapper">
+  <canvas #canvas></canvas>
+
+  <div class="ui-overlay">
+    <div class="power-bar">
+      <div class="power-fill" [style.width.%]="powerPercent"></div>
+    </div>
+    <button class="reset-btn" (click)="reset()">Reiniciar</button>
+  </div>
+
+  <div class="win-popup" *ngIf="hasWon">
+    <h1>🏆 ¡Victoria!</h1>
+    <p>¡Has acertado en la diana!</p>
+    <button (click)="reset()">Volver a jugar</button>
+  </div>
+</div>
